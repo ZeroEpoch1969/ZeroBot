@@ -87,7 +87,7 @@ async def on_member_update(before: discord.Member, after: discord.Member):
             if (last - now).total_seconds() > 0:
                 return
         last_reboot = now + timedelta(minutes=1)
-        os.popen("restartbot.sh")
+        os.popen("./restartbot.sh")
         await bot.get_channel(bot_log_channel_id).send(":stopwatch: `{}` {}".format(time.strftime("%H:%M:%S"), "Ruby Rose was automatically rebooted"))
 
 @bot.command(hidden=True)
